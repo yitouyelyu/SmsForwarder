@@ -40,21 +40,16 @@ jobs:
       # 打包release
       - name: Build with Gradle
         run: bash ./gradlew assembleRelease
-      # 创建release
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #上传APK
+      - name: Upload App To Artifact armeabi-v7a
+        if: success () || failure ()
+        uses: actions/upload-artifact@v4
         with:
-          tag_name: ${{ github.ref }}
-          release_name: SmsForwarder ${{ github.ref }}
-          draft: false
-          prerelease: false
-      # 上传至release的资源
-      - name: Upload release binaries
-        uses: alexellis/upload-assets@0.2.2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          name: "SmsF_armeabi-v7a_release.apk"
+          path: "/SmsF_*_armeabi-v7a_release.apk"
+      - name: Upload App To Artifact arm64-v8a
+        if: success () || failure ()
+        uses: actions/upload-artifact@v4
         with:
-          asset_paths: '["./build/app/outputs/apk/release/SmsF_*"]'
+          name: "SmsF_arm64-v8a_release.apk"
+          path: "/SmsF_*_arm64-v8a_release.apk"

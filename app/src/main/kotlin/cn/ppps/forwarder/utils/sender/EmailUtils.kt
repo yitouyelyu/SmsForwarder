@@ -143,7 +143,15 @@ class EmailUtils {
                         val fromAlias = setting.fromEmailAlias.ifEmpty {
                             setting.fromEmail
                         }
-                        val nickname = msgInfo.getTitleForSend(setting.nickname)
+                        
+                        //val nickname = msgInfo.getTitleForSend(setting.nickname)
+                        //nickname支持正则表达式替换
+                        val nickname = if (rule != null) {  
+                            msgInfo.getTitleForSend(setting.nickname, rule.regexReplace)  
+                            } else {  
+                                msgInfo.getTitleForSend(setting.nickname)  
+                            }
+
                         setting.recipients.ifEmpty {
                             //兼容旧的设置
                             val emails = setting.toEmail.replace("[,，;；]".toRegex(), ",").trim(',').split(',')

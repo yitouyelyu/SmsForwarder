@@ -29,12 +29,14 @@ jobs:
           java-version: '11'
           java-package: jdk
       # 获取打包秘钥
-      - name: Checkout Android Keystore
-        uses: actions/checkout@v4
-        with:
-          repository: pppscn/keystore
-          token: ${{ secrets.TOKEN }} # 连接仓库的token,需要单独配置
-          path: keystore # 仓库的根目录名
+      - name: Setup Keystore  
+        run: |  
+          mkdir -p keystore  
+          echo "${{ secrets.KEYSTORE_FILE }}" | base64 -d > keystore/smsf.keystore
+          echo "storeFile=../keystore/smsf.keystore" > keystore/keystore.properties  
+          echo "storePassword=${{ secrets.STORE_PASSWORD }}" >> keystore/keystore.properties  
+          echo "keyAlias=${{ secrets.KEY_ALIAS }}" >> keystore/keystore.properties  
+          echo "keyPassword=${{ secrets.KEY_PASSWORD }}" >> keystore/keystore.properties
       # 打包release
       - name: Build with Gradle
         run: bash ./gradlew assembleRelease

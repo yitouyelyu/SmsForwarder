@@ -184,10 +184,10 @@ class MainActivity : BaseActivity<ActivityMainBinding?>(), DrawerAdapter.OnItemS
         mMenuIcons = ResUtils.getDrawableArray(this, R.array.menu_icons)
 
         //仅当开启自动检查且有网络时自动检查更新/获取提示
-        if (SettingUtils.autoCheckUpdate && NetworkUtils.isHaveInternet()) {
-            showTips(this)
-            XUpdateInit.checkUpdate(this, false, SettingUtils.joinPreviewProgram)
-        }
+        //if (SettingUtils.autoCheckUpdate && NetworkUtils.isHaveInternet()) {
+        //    showTips(this)
+        //    XUpdateInit.checkUpdate(this, false, SettingUtils.joinPreviewProgram)
+        //}
     }
 
     //按返回键不退出回到桌面

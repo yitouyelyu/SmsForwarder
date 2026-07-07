@@ -81,7 +81,7 @@ class AboutFragment : BaseFragment<FragmentAboutBinding?>(), SuperTextView.OnSup
 
     override fun initListeners() {
         binding!!.btnUpdate.setOnClickListener {
-            XUpdateInit.checkUpdate(requireContext(), true, SettingUtils.joinPreviewProgram)
+            //XUpdateInit.checkUpdate(requireContext(), true, SettingUtils.joinPreviewProgram)
         }
         binding!!.btnCache.setOnClickListener {
             HistoryUtils.clearPreference()

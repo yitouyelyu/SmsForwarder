@@ -37,6 +37,10 @@ class UMengInit private constructor() {
          * 初始化SDK,合规指南【先进行预初始化，如果用户隐私同意后可以初始化UmengSDK进行信息上报】
          */
         private fun initApplication(application: Application?) {
+            
+            //不统计数据
+            return
+            
             // 运营统计数据调试运行时不初始化
             if (App.isDebug) {
                 return

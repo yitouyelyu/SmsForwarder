@@ -336,9 +336,9 @@ class App : Application(), CactusCallback, Configuration.Provider by Core {
         // 转发历史工具类初始化
         HistoryUtils.init(applicationContext)
         // 版本更新初始化
-        XUpdateInit.init(this)
+        //XUpdateInit.init(this)
         // 运营统计数据
-        UMengInit.init(this)
+        //UMengInit.init(this)
         // 初始化语种切换框架
         MultiLanguages.init(this)
         // 设置语种变化监听器

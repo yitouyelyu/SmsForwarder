@@ -533,9 +533,9 @@
     <string name="rule_is">IS</string>
     <string name="rule_notis">NOTIS</string>
     <string name="rule_contain">CONTAIN</string>
-    <string name="rule_startwith">STARTWITH</string>
-    <string name="rule_endwith">ENDWITH</string>
-    <string name="rule_notcontain">NOTCONTAIN</string>
+    <string name="rule_startwith">START_WITH</string>
+    <string name="rule_endwith">END_WITH</string>
+    <string name="rule_notcontain">NOT_CONTAIN</string>
     <string name="rule_regex">REGEX</string>
     <string name="package_name_copied">Package name copied:</string>
     <string name="enable_phone_fw_tips">A call type must be selected to enable call log forwarding!</string>
@@ -661,8 +661,10 @@
     <string name="choose_app">Installed Apps</string>
     <string name="extra_app">Extra Apps</string>
     <string name="extra_app_hint">One package name per line\nEnable async loading of the App list for selection.</string>
+    <string name="app_notify_blacklist">App Notification Keyword Blacklist</string>
+    <string name="app_notify_blacklist_hint">One keyword per line, regex supported\nSkip forwarding if the title or content matches any keyword.</string>
     <string name="choose_app_hint">Drop-down selection to get package name, keyword fuzzy matching APP name</string>
-    <string name="regex_multi_match" tools:ignore="TypographyDashes">^\\s*(AND|OR)\\s(IS|NOTIS)\\s(PHONE_NUM|PACKAGE_NAME|MSG_CONTENT|INFORM_CONTENT|INFORM_TITLE|CARD_SLOT|CALL_TYPE|UID)\\s(EQUALS|CONTAIN|NOTCONTAIN|STARTWITH|ENDWITH|REGEX)\\s(.*)$</string>
+    <string name="regex_multi_match" tools:ignore="TypographyDashes">^\\s*(AND|OR|and|or)\\s(IS|NOTIS)\\s(PHONE_NUM|PACKAGE_NAME|MSG_CONTENT|INFORM_CONTENT|INFORM_TITLE|CARD_SLOT|CALL_TYPE|UID)\\s(EQUALS|CONTAIN|NOT_CONTAIN|START_WITH|END_WITH|REGEX)\\s(.*)$</string>
     <string name="privacy_content_1">Welcome to</string>
     <string name="privacy_content_2">We understand the importance of personal information to you and thank you for your trust in us.\n</string>
     <string name="privacy_content_3">In order to better protect your rights and comply with relevant regulatory requirements, we will pass "</string>
